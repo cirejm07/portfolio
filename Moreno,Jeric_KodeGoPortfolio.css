@@ -16,10 +16,14 @@ a, ul, li {
     list-style-type: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: rgb(245, 245, 245);
-    scroll-behavior: smooth;
+    cursor:context-menu;
 }
 
 
@@ -40,10 +44,12 @@ nav {
     text-align: center;
     transition: transform 300ms;
     background-color: rgba(0, 0, 0, 0.);
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 nav.hide{
-    transform: translateY(-100px);
+    transform: translateY(-150px);
 }
 
     /* Navbar Image */
@@ -258,13 +264,11 @@ article {
     }
 
 #my-skills{
-    border: 1px solid #ffffff;
-    border-radius: 15px;
     background-color: #ffffff;
-    width: 80%;
+    border-radius: 15px;
+    width: 60%;
     margin: -6rem auto 0 auto;
     text-align: center;
-    padding: 4rem;
     position: relative;
     box-shadow: 8px 8px 15px 1px rgba(0, 0, 0, 0.1);
     cursor: context-menu;
@@ -292,7 +296,7 @@ article {
         margin: auto;
         border: 1.5px solid var(--myColor);
         padding: 5rem;
-        box-shadow: 7px 0px 0px 5px var(--myColor);
+        box-shadow: 10px 10px 0px 0px var(--myColor);
     }
 
     /* </> */
@@ -342,7 +346,7 @@ article {
     #interested-in-coding a::after{
         content: " ";
         position: absolute;
-        left: 70%;
+        left: 20%;
         bottom: -8px;
         border-top: 8px solid black;
         border-right: 8px solid transparent;
@@ -422,7 +426,7 @@ article {
         width: 0;
         height: 2px;
         background: var(--myColor);
-        transition: width .3s;
+        transition: width ease-in-out .3s;
     }
     
     #my-skills #dev-tools li:hover::after {
@@ -437,29 +441,288 @@ article {
     }
 
     #projects-container{
-        width: 80%;
+        width: 60%;
         margin: 2rem auto;
-        border: 1px solid black;
+        border: 1.5px solid var(--myColor);
+        padding: 5rem;
+        box-shadow: 10px 10px 0px 0px var(--myColor);
     }
 
         #projects-container p:nth-of-type(1){
             font-size: 2rem;
             text-align: center;
-            margin-top: 2rem;
+            margin: 2rem 0;
             font-weight: 500;
         }
 
+        #projects-container hr{
+            opacity: 0.2;
+        margin-bottom: 2rem;
+        }
+
+
+        #projects-container p:nth-of-type(2){
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+
+        #projects-container #email-me a{
+            color: var(--myColor);
+            position: relative;
+        }
+
+        #projects-container  #email-me a:hover::after{
+            color: var(--myColor);
+            content: "←";
+            position: absolute;
+            top: 0;
+            animation:blink 1s ease-in-out 0.05s infinite;
+        }
+
+
         #projects-container #projects {
             display: grid;
-            height: 80vh;
-            grid-template-columns: repeat(auto-fit, minmax(320px ,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
             grid-gap: 2rem;
             padding: 5rem;
         }
 
     .cards {
+        overflow: hidden;
         border: 1px solid var(--myColor);
+        border-radius: 10px;
         box-shadow: 5px 5px 1px 2px var(--myColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 25vh;
     }
 
-    
+
+    .view-project {
+        position: absolute;
+        left: 0;
+        top: 50;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: ease;
+        display: none;
+        cursor: context-menu;
+        color: #ffffff;
+    }
+
+    .hide-element {
+        visibility: hidden;
+    }
+
+    .view-project p{
+        font-size: 1.1rem !important;
+        margin: 2rem 0;
+        padding: 0.5rem;
+    }
+
+    .view-project a {
+        color: #ffffff;
+        border: 2px solid var(--myColor);
+        font-weight: 400;
+        padding: 0.5rem;
+        border-radius: 20px;
+    }
+
+    .view-project a:hover {
+        background-color: var(--myColor);
+    }
+
+#hr-spacer{
+    width: 100%;
+    margin: 10rem 0;
+    opacity: 0.2;
+}
+
+#testimonial-container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+    #testimonial-container #testimonial-title{
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--myColor);
+        padding: 2%;
+        color: #ffffff;
+        width: 100%;
+    }
+
+    #testimonial-container #testimonial-title p:nth-of-type(2){
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+
+    #testimonial-container .testimonial-card-container {
+        height: 100vh;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #testimonial-card{
+        position: absolute;
+        background-color: red;
+        left: 40%;
+        top: 25%;
+    }
+
+    #testimonial-card img {
+       width: 50%;
+       height: 150px;
+       border: 1px solid var(--myColor);
+       border-radius: 50%;
+       box-sizing: content-box;
+       padding: 0.5rem;
+    }
+
+
+    #testimonial-card #side1{
+        height: 28vh;
+        width: clamp(15vw,15vw,15vw);
+        position: absolute;
+        transform: translateX(-100px) scale(1);
+        z-index: 99;
+        border: 2px solid gray;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 0px 1px var(--myColor);
+        transition: transform .5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #testimonial-card #side2{
+        height: 28vh;
+        width: clamp(15vw,15vw,15vw);
+        position: absolute;
+        transform: translateX(100px) scale(1);
+        z-index: 99;
+        border: 2px solid gray;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 0px 1px var(--myColor);
+        transition: transform .5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #testimonial-card #side3{
+        height: 28vh;
+        width: clamp(15vw,15vw,15vw);
+        position: absolute;
+        transform: translateX(0px) scale(1.5);
+        z-index: 99;
+        border: 2px solid gray;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 0px 1px var(--myColor);
+        transition: transform .5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #testimonial-card .testimonial-thoughts{
+        text-align: center;
+        font-size: 75%;
+        width: 80%;
+    }
+
+    #testimonial-card .testimonial-thoughts :is(p:nth-child(1), p:nth-child(2), p:nth-child(3)){
+        text-align: center;
+    }
+
+    #testimonial-card .testimonial-thoughts :is(p:nth-child(1),p:nth-child(2), p:nth-child(3)){
+        margin-top: 0.5rem;
+    }
+
+    #testimonial-card .testimonial-thoughts p:nth-child(2){
+        font-weight: 500;
+    }
+
+
+    #testimonial-container :where(.prev, .next){
+        font-size: 10rem;
+        color: var(--myColor);
+        cursor: pointer;
+    }
+
+    #testimonial-container .prev{
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        z-index: 100;
+    }
+
+    #testimonial-container .next{
+        position: absolute;
+        top: 30%;
+        right: 27%;
+        z-index: 100;
+    }
+
+
+footer {
+    width: 100%;
+    background-color: var(--myColor);
+    height: 20vh;
+    text-align: center;
+}
+
+    footer #footer-container{
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer-container ul{
+        display: flex;
+        justify-content: center;
+    }
+
+    #footer-container ul li {
+        margin: 1rem 1.7rem;
+    }
+
+    footer #footer-container a{
+        color: #ffffff;
+        font-size: 1.6rem;
+        border: 3px solid #d9d9d9;
+        border-radius: 50%;
+        padding: 8px;
+        background-color: #7836fc;
+    }
+
+    footer #footer-container a:hover{
+        background-color: #ffffff;
+        transition: all 0.5s;
+        color: var(--myColor);
+        border: 3px solid var(--myColor);
+    }
+
+    footer div:nth-child(2){
+        margin-top: 1.5rem;
+        color: #ffffff;
+        font-size: 1.2rem;
+        letter-spacing: 0.5rem;
+    }
