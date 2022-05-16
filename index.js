@@ -1,5 +1,44 @@
 $(document).ready(function() {
 
+
+// GSAP - quickSetter mouse follower
+gsap.set(".ball", {xPercent: -50, yPercent: -50});
+
+const ball = $(".ball")
+const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+const mouse = { x: pos.x, y: pos.y };
+const speed = 0.35;
+
+const xSet = gsap.quickSetter(ball, "x", "px");
+const ySet = gsap.quickSetter(ball, "y", "px");
+
+window.addEventListener("mousemove", e => {    
+  mouse.x = e.x;
+  mouse.y = e.y;  
+});
+
+console.log($("window"))
+
+gsap.ticker.add(() => {
+  
+  // adjust speed for higher refresh monitors
+  const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio()); 
+  
+  pos.x += (mouse.x - pos.x) * dt;
+  pos.y += (mouse.y - pos.y) * dt;
+  xSet(pos.x);
+  ySet(pos.y);
+});
+
+//GSAP - Typewritter plugin
+gsap.to("#intro", {text: "Front-end Developer",duration: 3, ease: "back", repeat: -1, yoyo:true})
+
+// GSAP - Timeline
+let tl = gsap.timeline({defaults:{ease:"back", opacity:0}});
+tl
+.from("#avatar", {y:50, duration: 2})
+.from("#tech-img",{y:50, duration: 1}, "-=0.7")
+
 // Navbar
 //set current scroll to 0
 var currentScroll = 0; 
@@ -20,7 +59,7 @@ $(window).scroll(function(){
   }, 100);
 });
 
-// Hovering the "coding word" a tool-tip will apprear
+// Hovering the "coding word" a tool-tip will appear
     $('.ingredients-logo-container').hover(
     function(){$(this).find(".ingredients-logo-text").fadeIn(150);},
     function(){$(this).find(".ingredients-logo-text").fadeOut(300);},
@@ -55,7 +94,7 @@ $(window).scroll(function(){
 
     // Show project description and anchor tag
     $(".cards").hover(
-    function(){$(this).find(".view-project").slideToggle(500);}
+    function(){$(this).find(".view-project").fadeToggle(500);}
     )
 
     // slider testimonial
