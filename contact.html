@@ -14,73 +14,37 @@
       src="https://kit.fontawesome.com/c78afc380b.js"
       crossorigin="anonymous"
     ></script>
-
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <title>Contact</title>
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <div id="nav-section">
-          <div><img src="./src/imgs/logo.png" alt="" /></div>
-          <div id="action-btn">
-            <a onclick="clickRefreshForm()" href=""><i class="fa-solid fa-rotate-right"></i></a>
-            <a href="./index.html"><i class="fa-solid fa-house-circle-xmark"></i></a>
-          </div>
+    <nav>
+      <div id="nav-section">
+        <div><img src="./src/imgs/logo.png" alt="" /></div>
+        <div id="action-btn">
+          <a onclick="clickRefreshForm()" href=""
+            ><i class="fa-solid fa-rotate-right"></i
+          ></a>
+          <a href="./index.html"
+            ><i class="fa-solid fa-house-circle-xmark"></i
+          ></a>
         </div>
-        <div id="logo">
-          <img src="./src/imgs/avataaars.svg" alt="" />
-          <p>Looking forward to hearing from you 😄</p>
-        </div>
-      </nav>
+      </div>
+      <div id="logo">
+        <img src="./src/imgs/avataaars.svg" alt="" />
+        <p>Looking forward to hearing from you 😄</p>
+      </div>
+    </nav>
 
-      <section>
-        <img src="./src/imgs/me.png" alt="" />
-        <div class="article-container">
-          <article>
-            <div>
-              <header>Jeric Moreno</header>
-              <p>Front-end Developer</p>
-            </div>
-            <div class="social-media">
-              <ul>
-                <li>
-                  <a href=""><i class="fa-brands fa-facebook-square"></i></a>
-                </li>
-                <li>
-                  <a href=""><i class="fa-brands fa-instagram-square"></i></a>
-                </li>
-                <li>
-                  <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                </li>
-              </ul>
-            </div>
-          </article>
-          <article>
-            <div>
-              <p>
-                <i class="fa-solid fa-house"></i> 1370 Jesusa Heights
-                Subdivision Burgos Road Extension, Brgy. Estefania Bacolod City
-                6100, Negros Occidental PH
-              </p>
-              <p>
-                <i class="fa-solid fa-phone"></i>
-                +63 949 505 8453
-              </p>
-              <p>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:moreno.jeric1995@gmail.com"
-                  >moreno.jeric1995@gmail.com</a
-                >
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <div id="my-form">
+      <div class="container row m-auto" id="my-form">
         <form id="form" action="https://formspree.io/f/mrgjrjjj" method="POST">
-          <div id="row-1">
-            <div class="name">
+          <div id="name" class="d-md-flex">
+            <div class="name col-md-6 mx-auto mt-2">
               <input
                 id="isName"
                 type="text"
@@ -92,7 +56,7 @@
               <label for="name" class="form-label">Name</label>
             </div>
 
-            <div class="email">
+            <div id="email" class="email col-md-6 mt-2">
               <input
                 type="email"
                 class="email-textbox"
@@ -107,6 +71,7 @@
           <div id="message">
             <p>Message</p>
             <textarea
+              class="w-100"
               id="txtarea"
               name="txtarea"
               rows="5"
@@ -118,43 +83,42 @@
           <p style="display: none" id="my-form-status"></p>
         </form>
       </div>
-      <footer>
-        <div class="mapouter">
-            <div class="gmap_canvas">
-              <iframe
-                width="100%"
-                height="500"
-                id="gmap_canvas"
-                src="https://maps.google.com/maps?q=1370%20Jesusa%20Heights%20Bacolod%20City&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-              ></iframe
-              ><a
-                href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"
-              ></a
-              ><br /><style>
-                .mapouter {
-                  position: relative;
-                  text-align: center;
-                  height: 185px;
-                  width: 100%;
-                  margin-top: 7rem;
-                }</style
-              ><a href="https://www.embedgooglemap.net">google map code generator</a
-              ><style>
-                .gmap_canvas {
-                  overflow: hidden;
-                  background: none !important;
-                  height: 100%;
-                  width: 100%;
-                }
-              </style>
-            </div>
-      </footer>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="./src/js/contact.js"></script>
-    </div>
+    <footer>
+      <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="100%"
+              height="500"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=1370%20Jesusa%20Heights%20Bacolod%20City&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe
+            ><a
+              href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"
+            ></a
+            ><br /><style>
+              .mapouter {
+                position: relative;
+                text-align: center;
+                height: 185px;
+                width: 100%;
+                margin-top: 7rem;
+              }</style
+            ><a href="https://www.embedgooglemap.net">google map code generator</a
+            ><style>
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 100%;
+                width: 100%;
+              }
+            </style>
+          </div>
+    </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./src/js/contact.js"></script>
   </body>
 </html>

@@ -29,13 +29,9 @@ gsap.ticker.add(() => {
 });
 
 //GSAP - Typewritter plugin
-gsap.to("#intro", {text: "Front-end Developer",duration: 3, ease: "back", repeat: -1, yoyo:true})
+gsap.to("#intro", {text: "Jeric Moreno",duration: 3, ease: "back", repeat: -1, yoyo:true})
 
-// GSAP - Timeline
-let tl = gsap.timeline({defaults:{ease:"back", opacity:0}});
-tl
-.from("#avatar", {y:50, duration: 2})
-.from("#tech-img",{y:50, duration: 1}, "-=0.7")
+
 
 // Navbar
 //set current scroll to 0
@@ -77,26 +73,7 @@ else {
     function(){$(this).find(".ingredients-logo-text").fadeOut(300);},
     )
     
-   $('#coding').hover(
-       
-       function(){$('#interested-in-coding a').css(
-           {
-               "visibility":"visible",
-               "transition-delay" : "0.2s"
-            }
-           )},
-       function(){$('#interested-in-coding a').css("visibility","hidden")}
-       )
-
-// Hovering the tool-tip anchor tag
-    $('#interested-in-coding a').hover(
-        function(){$(this).css(
-            {"visibility" : "visible",
-            "transition-delay" : "-0.2s"
-        }
-            )},
-        function(){$(this).css("visibility","hidden")}
-        )
+  
 
     // when hover, the parent will find it child element "cards-title" and add a class title of "hide-element"
     $(".cards").hover(

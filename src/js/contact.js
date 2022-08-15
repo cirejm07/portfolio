@@ -46,7 +46,7 @@
     form.addEventListener("submit", handleSubmit)
 
 
-    var isRefresh = document.getElementById("rotate-refresh")
+    // var isRefresh = document.getElementById("rotate-refresh")
     
     function clickRefreshForm(){
         form.reset()
