@@ -9,6 +9,14 @@
     box-sizing: border-box;
 }
 
+/* input */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 /* anchor tag reset */
 a {
     text-decoration: none;
@@ -164,7 +172,7 @@ label{
 /* name */
 .name{
     position: relative;
-    width: 20rem;
+    width: 100%;
     height: 3rem;
 }
 
@@ -188,7 +196,7 @@ label{
 
 .name-textbox:focus,
 .name-textbox:not(:placeholder-shown).name-textbox:not(:focus){
-    width: 75%;
+    width: 100%;
     border: 1px solid gray;
 }
 
@@ -205,12 +213,12 @@ background-color: #fff;
 /* email */
     .email{
         position: relative;
-        width: 20rem;
+        width: 100%;
         height: 3rem;
     }
 
     .email-textbox{
-        position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 50%;
@@ -230,13 +238,55 @@ background-color: #fff;
 
     .email-textbox:focus,
     .email-textbox:not(:placeholder-shown).email-textbox:not(:focus){
-        width: 70%;
+    width: 100%;
     border: 1px solid gray;
     }
 
 
     .email-textbox:focus ~ .form-label,
     .email-textbox:not(:placeholder-shown).email-textbox:not(:focus) ~ .form-label{
+        top: -0.9rem;
+        font-size: 1.2rem;
+        left: 0.5rem;
+        color: var(--myColor);
+        background-color: #fff;
+    }
+
+    /* subject */
+    .subject{
+        position: relative;
+        width: 100%;
+        height: 3rem;
+    }
+
+    .subject-textbox{
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: inherit;
+    font-size: inherit;
+    color: black;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+    font-size: 1.435rem;
+    transition: width ease-in 200ms;
+    }
+
+
+    .subject-textbox:focus,
+    .subject-textbox:not(:placeholder-shown).subject-textbox:not(:focus){
+    width: 100%;
+    border: 1px solid gray;
+    }
+
+
+    .subject-textbox:focus ~ .form-label,
+    .subject-textbox:not(:placeholder-shown).subject-textbox:not(:focus) ~ .form-label{
         top: -0.9rem;
         font-size: 1.2rem;
         left: 0.5rem;
@@ -255,11 +305,28 @@ background-color: #fff;
 
     textarea{
         resize: none !important;
-        font-size: 2rem !important;
-        width: 85%;
+        font-size: 1.2rem !important;
+        width: 500px;
+        font-weight: 500;
+        padding: 1px 15px;
     }
 
-    #my-form button {
+    #form {
+        width: max-content;
+    }
+
+    @media only screen and (max-width: 500px) {
+        #form {
+            width: 100%;
+        }
+        textarea{
+            resize: none !important;
+            font-size: 1.2rem !important;
+            width: 100%;
+        }
+      }
+
+    #form button {
         border: 1px solid var(--myColor);
         background-color: var(--myColor);
         font-size: 1.2rem;
@@ -267,9 +334,10 @@ background-color: #fff;
         cursor: pointer;
         border-radius: 5px;
         margin-top: -0.2rem;
+
     }
 
-    #my-form button:hover {
+    #form button:hover {
         color: #fff;
     }
 

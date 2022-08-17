@@ -41,10 +41,10 @@
       </div>
     </nav>
 
-      <div class="container row m-auto" id="my-form">
-        <form id="form" action="https://formspree.io/f/mrgjrjjj" method="POST">
-          <div id="name" class="d-md-flex">
-            <div class="name col-md-6 mx-auto mt-2">
+        <form class="position-relative mx-auto container-fluid overflow-hidden" id="form" action="https://formspree.io/f/mrgjrjjj" method="POST">
+         
+            <!-- name -->
+            <div class="name mt-2">
               <input
                 id="isName"
                 type="text"
@@ -55,8 +55,8 @@
               />
               <label for="name" class="form-label">Name</label>
             </div>
-
-            <div id="email" class="email col-md-6 mt-2">
+            <!-- email -->
+            <div id="email" class="email mt-4">
               <input
                 type="email"
                 class="email-textbox"
@@ -66,12 +66,22 @@
               />
               <label for="email" class="form-label">Email</label>
             </div>
-          </div>
+            <!-- subject -->
+            <div id="subject" class="subject mt-4">
+              <input
+                type="text"
+                class="subject-textbox"
+                name="subject"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="subject" class="form-label">Subject</label>
+            </div>
+        
 
           <div id="message">
             <p>Message</p>
             <textarea
-              class="w-100"
               id="txtarea"
               name="txtarea"
               rows="5"
@@ -82,7 +92,8 @@
           <button id="my-form-button">Send</button>
           <p style="display: none" id="my-form-status"></p>
         </form>
-      </div>
+
+
     <footer>
       <div class="mapouter">
           <div class="gmap_canvas">
