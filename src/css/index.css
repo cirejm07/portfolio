@@ -682,6 +682,11 @@ footer {
         flex-wrap: wrap;
     }
 
+    .fa-brands,
+    .fa-solid {
+       padding: 5px;
+    }
+
     footer #footer-container a{
         color: #ffffff;
         font-size: 1.6rem;
